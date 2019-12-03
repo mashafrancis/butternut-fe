@@ -12,7 +12,6 @@
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-
   margin: 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -21,20 +20,6 @@
   overflow: hidden;
   box-sizing: border-box;
   font-weight: 200;
-
-  @media screen and (max-width: 900px) {
-
-  }
-
-  @media screen and (max-width: 768px) {
-
-  }
-
-  @media screen and (max-width: 500px) {
-
-  }
-
-  @media screen and (max-width: 340px) {
-
-  }
 }
+
+/*# sourceMappingURL=HomePage.css.map */

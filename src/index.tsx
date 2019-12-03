@@ -8,11 +8,23 @@ import { BrowserRouter } from 'react-router-dom';
 // components
 import App from './App/index';
 
-export const app = ReactDOM.render(
+ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root') || document.createElement('div')
 );
 
-export default app;
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/service-worker.js')
+    .then(function (registration) {
+      console.log(
+        'Service Worker registration successful with scope: ',
+        registration.scope
+      );
+    })
+    .catch(function (err) {
+      console.log('Service Worker registration failed: ', err);
+    });
+}

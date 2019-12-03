@@ -1,12 +1,13 @@
 {
   "author": "Francis Masha",
-  "name": "butternut",
-  "short_name": "butternut",
-  "theme_color": "#000000",
+  "name": "Butternut",
+  "short_name": "Butternut",
+  "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "https://butternut-staging.herokuapp.com/",
+  "orientation": "portrait",
+  "scope": ".",
+  "start_url": "/",
   "icons": [
     {
       "src": "./logo.png",
