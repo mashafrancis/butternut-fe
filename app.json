@@ -1,0 +1,10 @@
+{
+  "addons": [],
+  "buildpacks": [],
+  "description": "",
+  "env": {},
+  "formation": {},
+  "name": "butternut-re",
+  "scripts": {},
+  "stack": "heroku-18"
+}
