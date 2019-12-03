@@ -5,12 +5,23 @@
   "scripts": {
     "start:dev": "webpack-dev-server --config config/webpack.dev.js --mode development --host butternut.com",
     "start:prod": "node server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:heroku": "node --optimize_for_size --max_old_space_size=920 --gc_interval=100 server.js",
+    "build": "webpack --config config/webpack.prod.js --mode production",
+    "lint:scss": "stylelint --fix",
+    "lint:ts": "tslint --project tsconfig.json --config tslint.json",
+    "test:unit": "jest -u --runInBand",
+    "test:commit": "yarn test:unit --coverage",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --browser chrome",
+    "cy:open:dev": "server-test start:dev 3000 cy:open",
+    "cy:e2e:prod": "yarn run cy:run"
   },
   "repository": "https://github.com/mashafrancis/webpack-starter.git",
   "author": "Francis Masha <francismasha96@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@material/react-material-icon": "^0.15.0",
     "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
     "@types/react-router-dom": "^5.1.3",
@@ -67,6 +78,8 @@
     "identity-obj-proxy": "^3.0.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "^24.9.0",
+    "jest-canvas-mock": "^2.2.0",
+    "jest-localstorage-mock": "^2.4.0",
     "jest-resolve": "^24.9.0",
     "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.8.0",
