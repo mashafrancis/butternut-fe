@@ -1,0 +1,32 @@
+# base image
+FROM node:carbon
+
+LABEL MAINTAINER="Francis Masha <francismasha96@gmail.com>"
+LABEL application="butternut-re"
+
+# the working directory where the application would be started
+WORKDIR /root/butternut-re
+
+# The Yarn.lock and package.json file is copied so that the versions
+# in the package.json are not upgraded from what is present in the
+# local package.json to a higher version in the container image.
+COPY yarn.lock /root/butternut-re
+COPY package.json /root/butternut-re
+
+# After the package.json is copied,
+# all dependencies are then installed with this command
+RUN yarn install
+
+# I noticed that when the docker image is being built, node-sass
+# randomly just does not complete installation without clear error messages
+# and so when the image is started, webpack would not be able to compile
+# because node-sass >= 4 is not installed
+# after installing dependencies, removing and re-installing node-sass below
+# fixed this issue.
+RUN yarn remove node-sass
+
+# same issue above occurs here
+RUN yarn add node-sass
+
+# same issue above occurs here
+RUN yarn add react-tooltip
