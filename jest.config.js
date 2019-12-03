@@ -57,7 +57,7 @@ module.exports = {
     'jest-canvas-mock',
     'jest-localstorage-mock',
     '<rootDir>/node_modules/regenerator-runtime/runtime',
-    '<rootDir>/src/setupMocks.ts',
+    // '<rootDir>/src/setupMocks.ts',
   ],
   coveragePathIgnorePatterns: ['/node_modules', '<rootDir>/src/index.tsx', 'src/store/index.tsx|rootReducer.ts'],
   snapshotSerializers: ['enzyme-to-json/serializer'],

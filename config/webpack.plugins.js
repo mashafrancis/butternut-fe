@@ -33,15 +33,19 @@ const hotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin();
 const hashedPlugin = new webpack.HashedModuleIdsPlugin();
 
 // call dotenv and it will return an Object with a parsed key
-const env = dotenv.config().parsed;
+// const env = dotenv.config().parsed;
 
 // reduce it to a nice object, the same as before
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(env[next]);
-  return prev;
-}, {});
+// const envKeys = Object.keys(env).reduce((prev, next) => {
+//   prev[`process.env.${next}`] = JSON.stringify(env[next]);
+//   return prev;
+// }, {});
 
-const definePlugin = new webpack.DefinePlugin(envKeys);
+const definePlugin = new webpack.DefinePlugin({
+  'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
+  'process.env.BUTTERNUT_API': JSON.stringify(process.env.BUTTERNUT_API),
+  'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
+});
 
 module.exports = {
   cleanWebpack,
