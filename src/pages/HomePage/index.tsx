@@ -1,5 +1,9 @@
 import * as React from 'react';
 
+// components
+import { Logo } from '@components/Logo';
+import { Grid } from '@components/LayoutGrid';
+
 // interfaces
 import { HomePageProps, HomePageState } from './interfaces';
 
@@ -10,7 +14,11 @@ export const HomePage: React.FunctionComponent<HomePageProps> = (props) => {
   const [state, setState] = React.useState<HomePageState>({});
   return (
     <React.Fragment>
-      <h2>Butternut!</h2>
+      <div className="authentication">
+        <Grid>
+          <Logo />
+        </Grid>
+      </div>
     </React.Fragment>
   );
 };
