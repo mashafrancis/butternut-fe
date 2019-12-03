@@ -1,0 +1,95 @@
+body, html {
+  font-family: Google Sans, Roboto, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  min-height: 100vh;
+  color: #202124;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+
+button {
+  text-transform: none;
+}
+
+button.launch {
+  border: none;
+}
+
+button.launch:hover {
+  cursor: pointer;
+}
+
+button.launch {
+  border: none;
+}
+
+button.launch:hover {
+  cursor: pointer;
+}
+
+button.change {
+  border: none;
+  height: 40px;
+}
+
+button.change:hover {
+  cursor: pointer;
+}
+
+button:active {
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+i {
+  text-transform: none;
+}
+
+i.launch {
+  border: none;
+}
+
+i.launch:hover {
+  cursor: pointer;
+}
+
+i.launch {
+  border: none;
+}
+
+i.launch:hover {
+  cursor: pointer;
+}
+
+i.change {
+  border: none;
+}
+
+i.change:hover {
+  cursor: pointer;
+}
+
+i:active {
+  outline: none;
+  border: none;
+}
+
+i:focus {
+  outline: 0;
+}
+
+.container {
+  height: 100%;
+}
+
+/*# sourceMappingURL=globals.css.map */
