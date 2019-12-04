@@ -1,0 +1,12 @@
+.authenticate {
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: rem(20px) rem(6px) 0;
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}

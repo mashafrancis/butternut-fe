@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 // third-party libraries
-import MaterialIcon from '@material/react-material-icon';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 // styles
 import './PageNotFound.scss';
@@ -24,7 +24,9 @@ const PageNotFound: React.FunctionComponent<PageNotFoundProps> = props =>  (
       <p>Sorry but the page you are looking for does not exist, have been removed. name changed or is temporarily
         unavailable</p>
         <button onClick={props.history.goBack} className="mdc-button mdc-button--raised">
-          <MaterialIcon className="back-button" icon="arrow_back" />
+          <SvgIcon>
+            <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+          </SvgIcon>
           <span className="mdc-button__label">Back</span>
         </button>
     </div>

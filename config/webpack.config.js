@@ -1,4 +1,5 @@
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 const {importer} = require('./webpack.util');
 const {
   definePlugin,
@@ -17,7 +18,6 @@ module.exports = {
   entry: {
     main: path.join(__dirname, '..', 'src', 'index.tsx'),
     styleGlobals: path.join(__dirname, '..', 'src/assets/scss/globals.scss'),
-    // fontGlobals: path.join(__dirname, '..', 'src/assets/scss/fonts.css')
   },
   output: {
     path: path.join(__dirname, '..', 'dist'),
@@ -51,34 +51,75 @@ module.exports = {
           loader: 'file-loader'
         }
       },
+      // "postcss" loader applies autoprefixer to our CSS.
+      // "css" loader resolves paths in CSS and adds assets as dependencies.
+      // "style" loader turns CSS into JS modules that inject <style> tags.
+      // In production, we use a plugin to extract that CSS to a file, but
+      // in development "style" loader enables hot editing of CSS.
       {
-        test: /\.(scss|css)$/,
+        test: /\.s?css$/,
         use: [
-          isDevMode ? 'style-loader' : miniCssExtractPlugin.loader,
+          require.resolve('style-loader'),
           {
-            loader: 'css-loader',
+            loader: require.resolve('css-loader'),
             options: {
-              sourceMap: true
-            }
+              importLoaders: 2,
+            },
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')({
-                'overrideBrowserslist': ['> 1%', 'last 2 versions']
-              })],
-            }
+            loader: require.resolve('sass-loader'),
           },
           {
-            loader: 'sass-loader',
+            loader: require.resolve('postcss-loader'),
             options: {
-              sourceMap: true,
-              importer,
-              includePaths: ['../node_modules'],
-            }
+              // Necessary for external CSS imports to work
+              // https://github.com/facebookincubator/create-react-app/issues/2677
+              ident: 'postcss',
+              plugins: () => [
+                require('postcss-flexbugs-fixes'),
+                autoprefixer({
+                  browsers: [
+                    '>1%',
+                    'last 4 versions',
+                    'Firefox ESR',
+                    'not ie < 9', // React doesn't support IE8 anyway
+                  ],
+                  overrideBrowserslist: ['> 1%', 'last 2 versions'],
+                  flexbox: 'no-2009',
+                }),
+              ],
+            },
           },
-        ]
+        ],
       },
+      // {
+      //   test: /\.(scss|css)$/,
+      //   use: [
+      //     isDevMode ? 'style-loader' : miniCssExtractPlugin.loader,
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         sourceMap: true
+      //       }
+      //     },
+      //     {
+      //       loader: 'postcss-loader',
+      //       options: {
+      //         plugins: () => [require('autoprefixer')({
+      //           'overrideBrowserslist': ['> 1%', 'last 2 versions']
+      //         })],
+      //       }
+      //     },
+      //     {
+      //       loader: 'sass-loader',
+      //       options: {
+      //         sourceMap: true,
+      //         importer,
+      //         includePaths: ['../node_modules'],
+      //       }
+      //     },
+      //   ]
+      // },
       {
         test: /\.(js|jsx)$/,
         exclude: [

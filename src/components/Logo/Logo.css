@@ -1,41 +1,41 @@
 .logo-component .logo {
-  height: 70px;
-  margin: 71px auto auto 252px;
+  height: rem(70px);
+  margin: rem(71px) auto auto rem(252px);
 }
 .logo-component .logo img {
   height: 100%;
 }
 @media all and (max-width: 900px) {
   .logo-component .logo {
-    margin: 30px auto;
+    margin: rem(30px) auto;
     text-align: center;
   }
 }
 @media all and (max-width: 768px) {
   .logo-component .logo {
-    margin: 30px auto;
+    margin: rem(30px) auto;
     text-align: center;
   }
 }
 @media all and (max-width: 500px) {
   .logo-component {
-    padding: 20px 0;
+    padding: rem(20px) 0;
   }
   .logo-component .logo {
-    margin: 0 auto 20px auto;
-    height: 40px;
+    height: rem(40px);
+    margin: 0 auto rem(20px) auto;
   }
   .logo-component .logo img {
-    height: 55px;
+    height: rem(55px);
   }
 }
 @media all and (max-width: 340px) {
   .logo-component {
-    padding: 16px 0;
+    padding: rem(16px) 0;
   }
   .logo-component .logo {
-    margin: 10px auto 20px auto;
-    height: 40px;
+    height: rem(40px);
+    margin: rem(10px) auto rem(20px) auto;
   }
 }
 
