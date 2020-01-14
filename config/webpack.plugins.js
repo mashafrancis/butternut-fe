@@ -6,6 +6,29 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 
+/**
+ * Parses environment variables into a format acceptable by the webpack DefinePlugin
+ * @param {object} configs Object literal containing configuration variables to
+ * parse before sending them to react
+ */
+const parseConfigs = configs => Object.keys(configs || {}).reduce(
+  (acc, val) => ({ ...acc, [val]: JSON.stringify(configs[val]) }),
+  {},
+);
+
+// fetch system environment variables
+const systemVariables = parseConfigs(process.env);
+
+// fetch environment variables from the dotenv file
+const { parsed: dotenvConfigs } = dotenv.config();
+
+// process the environment variables from the dotenv file
+const processedDotenvConfigs = parseConfigs(dotenvConfigs);
+
+const definePlugin = new webpack.DefinePlugin({
+  'process.env': { ...processedDotenvConfigs, ...systemVariables },
+});
+
 // instantiating webpack dependencies
 const cleanWebpack = new CleanWebpackPlugin();
 const htmlWebpack = new htmlWebpackPlugin({
@@ -41,11 +64,12 @@ const hashedPlugin = new webpack.HashedModuleIdsPlugin();
 //   return prev;
 // }, {});
 
-const definePlugin = new webpack.DefinePlugin({
-  'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
-  'process.env.BUTTERNUT_API': JSON.stringify(process.env.BUTTERNUT_API),
-  'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
-});
+// const definePlugin = new webpack.DefinePlugin({
+//   'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
+//   'process.env.BUTTERNUT_API': JSON.stringify(process.env.BUTTERNUT_API),
+//   'process.env.PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL),
+//   'process.env.SASS_PATH': JSON.stringify(process.env.SASS_PATH),
+// });
 
 module.exports = {
   cleanWebpack,

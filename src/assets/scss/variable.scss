@@ -1,0 +1,83 @@
+$palette: (
+  primary: #3359DB,
+  secondary: #FFAF30,
+  secondary-dark: #FFAF2F,
+  tertiary: #F6D280,
+  light: #2956E3,
+  lighter: #6487FF,
+  danger: #FF5359,
+  success: #72D11F,
+  success-dark: #10A36D,
+  status-background: #F6D280,
+  upload-background: #E8ECF9,
+);
+
+$text-colors: (
+  header: #333E44,
+  table-header: #999,
+  content: #333E44,
+  navbar: #BCBCBC,
+  navbar-active: #0459E4,
+  user-name: #838383,
+  settings-menu: #6D6D6D,
+  category-page-select-box: #7D7D7D,
+  input-box: #7D7D7D,
+  asset-sub-header: #303030,
+  analytics-border:#EBEBEB,
+  table-hover: #FAFAFA,
+  auth-page:#808FA3,
+  danger: #D0021B,
+  asset-expiry-text-color: #FF5359,
+  asset-data-text-color: #333E44,
+  page-title-color: #3359DB,
+  asset-title: #3359DB,
+);
+
+$white: #FFF;
+
+$grey: (
+  100: #FFF,
+  150: #F2F2F2,
+  200: #F4F8F9,
+  300: #D4D4D4,
+  400: #BCBCBC,
+  450: #EFF4F7,
+  500: #999,
+  600: #838383,
+  700: #333E44,
+  800: #323C47,
+  900: #E0E0E0,
+  950: #E6E6E6,
+  1000: #D6DEE4,
+  1100: #F2F2F2,
+  1200: #F8F8F8,
+  1300: #C6C6C6,
+  1400: #777,
+  1500: #4F4F4F,
+  1600: #E4E4E4,
+  1650: #999,
+  1700: #000,
+  1800: #FDF7F7,
+  1900: #E9EEFE,
+  2000: #E9EBF1,
+  2100: #EBEEF0,
+  2500: #7D7D7D,
+  2550: #D8D8D8,
+  2600: #D8D8D840,
+  2700: #EFEFEF,
+);
+
+$notify: (
+  primary: #10A36D,
+  box-shadow: 0.0625rem 0.3125rem 1rem 0 rgba(16, 163, 109, 0.19),
+);
+
+$background: #F6F9FC;
+$boxshadow: 0.0625rem 0.3125rem 1rem 0 rgba(0, 0, 0, 0.19);
+$modal-backdrop: rgba(0, 0, 0, 0.5);
+$empty-msg-backdrop: rgba(125, 125, 125, 0.84);
+$light-modal-backdrop: rgba(0, 0, 0, 0.05);
+$tooltip-background-color: #333E44;
+$light-dropdown-boxshadow: 0 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.1);
+$loader: #E2E2E2;
+$button-count: #A8B0B5;

@@ -1,0 +1,11 @@
+.authenticate header {
+  display: flex;
+  justify-content: space-between;
+  margin: rem(20px) rem(6px) 0;
+}
+.authenticate header .back-button {
+  display: inline-flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=RegistrationPage.css.map */
