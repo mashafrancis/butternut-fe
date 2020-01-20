@@ -48,12 +48,17 @@ const card = {
 };
 
 const defaultFont = {
-  fontFamily: '"Google Sans", "Roboto", "Helvetica Neue", sans-serif',
+  fontFamily: `"Google Sans", Roboto, "Helvetica Neue", sans-serif`,
   fontWeight: '400',
   lineHeight: '1.5em',
 };
 
-const primaryColor = '#9c27b0';
+const primaryColor = '#037d88';
+const primaryColorVary = '#009dac';
+const secondaryColor = '#df954a';
+const secondaryColorVary = '#d1a777';
+const secondaryColorLight = '#fff2d5';
+const fontColor = 'rgba(0, 0, 0, 0.54)';
 const warningColor = '#ff9800';
 const dangerColor = '#f44336';
 const successColor = '#4caf50';
@@ -173,6 +178,11 @@ export {
   card,
   defaultFont,
   primaryColor,
+  primaryColorVary,
+  secondaryColor,
+  secondaryColorVary,
+  secondaryColorLight,
+  fontColor,
   warningColor,
   dangerColor,
   successColor,

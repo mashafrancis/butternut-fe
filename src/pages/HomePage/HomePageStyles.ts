@@ -1,6 +1,6 @@
 import { container, title } from '../../assets/tss/common';
 
-const homePageStyle = {
+const HomePageStyle = {
   container: {
     zIndex: '12',
     color: '#FFFFFF',
@@ -33,4 +33,4 @@ const homePageStyle = {
   },
 };
 
-export default homePageStyle;
+export default HomePageStyle;
