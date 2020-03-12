@@ -41,7 +41,7 @@ export const HeaderLinks = (props) => {
           </Tooltip>
         </ListItem>
       </Link>
-      <Link to={'/register'}>
+      <Link to={'/login'}>
         <ListItem className={classes.listItem}>
           <Tooltip
             id="login"

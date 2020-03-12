@@ -11,4 +11,9 @@ export interface RegistrationPageState {
   errors: {
     [key: string]: string
   };
+  showPassword: boolean;
+  showConfirmPassword: boolean;
+  password: string;
+  confirmPassword: string;
+  email: string;
 }
